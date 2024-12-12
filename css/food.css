@@ -1,128 +1,563 @@
-/* Base Styles */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+*{
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    
+}
+.container{
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;  
+}
+@media(min-width:768px) and (max-width:991px){
+    .container{
+        width: 750px;
+       
+    }
+    .landing .container{
+        background-size: cover;
+
+    }
+}
+@media(min-width=992px){
+    .container{
+        width: 970px;
+     
+    }
+}
+@media(min-width:1200px){
+    .container{
+        width:1170px;
+    }
+
+}
+.special-heading{
+    color:#facab6 ;
+    font-size: 100px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0px;
+    letter-spacing: -3px;
+   
+}
+.special-heading + p{
+    color: red;
+    font-size: 20px;
+    margin: -30px 0 0 0;
+    text-align: center;
 }
 
-.header {
-  background-color: #333;
-  color: #fff;
-  padding: 15px 0;
+    .special-heading + p{
+        margin-top: -20px;
+    }
+.header{
+    background-color:red;
+    padding: 20px;
 }
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
 }
-
-.header .links ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  margin: 0;
-  padding: 0;
+.header .logo {
+    color: white;
+    font-size: 40px;
 }
+.header .links{
+    position: relative;
 
-.header .links ul li a {
-  color: #fff;
-  text-decoration: none;
 }
-
-.landing {
-  background-color: #f4f4f4;
-  padding: 50px 20px;
-  text-align: center;
+.header .links .icon{
+    width: 30px;
+    display: flex;/*مشكلة*/
+    flex-wrap: wrap;
+    justify-content: flex-end;  
 }
-
-.landing .intro-text h1 {
-  font-size: 36px;
-  margin: 0;
+.header .links .icon span{
+    background-color:white;
+    margin-bottom: 5px;
 }
-
-.landing .intro-text p {
-  font-size: 18px;
-  margin: 10px 0 0;
+.header .links .icon span:first-child{
+    width: 100%;
+    height: 3px;
 }
-
-.menu .row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+.header .links .icon span:nth-child(2){
+    width: 60%;
+    height: 3px;
+    transition: .5s;
+    
 }
-
-.menu .m1 img {
-  max-width: 100%;
-  height: auto;
+.header .links .icon span:last-child{
+    width: 100%;
+    height: 3px;
 }
-
-.menu .row button {
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+.header .links:hover .icon span:nth-child(2){
+    width: 100%;
 }
-
-.Services {
-  background-color: #ddd;
-  padding: 40px 20px;
+.header .links ul{
+    list-style: none;
+   background-color: silver;
+   position:absolute;
+   right: 0;
+   margin: 0;
+   padding: 0;
+   min-width:200px;
+   top: calc(100% + 30px);
+   z-index: 1;
+   display: none;
+   
 }
-
-.Services .Services-content {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+.header .links ul::before{
+    content: " ";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position:absolute;
+    top:-20px;
+    right: 5px;
 }
-
-.Services .cal1 {
-  background-color: #fff;
-  padding: 20px;
-  text-align: center;
-  border: 1px solid #ccc;
-  flex-basis: 30%;
+.header .links ul li a{
+    text-decoration: none; 
+    padding: 20px;
+    color:#333;
+    transition:.3s;
+    display: block;  
 }
-
-/* Responsive Styles */
-@media only screen and (max-width: 600px) {
-  .header .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header .links ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .landing .intro-text h1 {
-    font-size: 24px;
-  }
-
-  .landing .intro-text p {
-    font-size: 14px;
-  }
-
-  .menu .m1 img {
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  .menu .row button {
-    margin: 10px auto;
+.header .links ul li a:hover{
+    padding-left: 30px;
+}
+.header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+.header .links:hover ul{
     display: block;
-  }
+}
 
-  .Services .Services-content {
-    flex-direction: column;
-  }
+/*start landing*/
+.landing .container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    background-image: url(../img/ماكدونالدز.jpg);
+    background-size: cover;
+    align-items: center;
+   /* height: calc(100vh - 100px);/*مشكلة*/
+ 
+    
+    position: relative;
 
-  .Services .Services-content .cal1 {
-    flex-basis: 100%;
-    margin: 10px 0;
+    
+    
+ 
+}
+.landing .intro-text{
+    position: absolute; /*الطريقة الثانية*/
+    left: 5%;
+    top:2%;
+
+}
+
+.landing .intro-text h1{
+    color:black;
+    font-size: 50px;
+    font-weight: bold;
+}
+.landing .intro-text p{
+    color: red;
+    font-size: 19px;
+    line-height: 1.2;
+}
+/***********************************************/
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    margin-top: 50px;
+    
+  
+}
+
+.col_3{
+    flex-basis: 30%;
+    background-color:orange;
+    padding:80px 0 50px 20px;
+    text-align: center;
+    min-width: 250px;
+    margin-bottom: 30px;
+   
+}
+.row .col_3:hover{
+    transform: scale(1.1);
+}
+.row .col_3 i{
+    font-size: 40px;
+    color: black;
+}
+
+.row .col_3 h3{
+    font-weight: 800;
+    margin: 15px 0;
+    color: black;
+}
+.row .col_3 p{
+    line-height: 1.8;
+    color: #ddd;
+    font-size: 17px;
+}
+/***************************************************************************/
+
+
+.Services{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    
+}
+.Services .Services-content{
+    margin-top:30px;
+    display: flex;
+    justify-content: space-around; 
+    width: 100%;
+   
+   
+}
+.Services .Services-content .cal1{
+  
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 70%;
+   
+
+   
+}
+.Services .Services-content .cal1 .l1{
+    background-color: red;
+    text-align: center;
+    flex-basis: 40%;
+    margin: 20px;
+   
+
+    
+    
+   
+}
+.Services .Services-content .cal1 .l1 h3{
+    font-size:30px ;
+    padding-top: 30px;
+    color: rgba(0, 0, 0, 0.432);
+    
+}
+.Services .Services-content .cal1 .l1 p{
+    color: #ddd;
+    margin-top: 20px;
+    margin-left: 10px;
+    line-height: 1.3;
+   text-align: center;
+    
+}
+.Services .Services-content .cal1 .l1 i{
+    padding-top: 20px;
+    font-size: 40px;
+}
+.Services .Services-content .call2{
+    flex-basis: 30%;
+    position: relative;
+    
+}
+
+.Services .Services-content .call2 video{
+  width: 100%;
+    
+  
+}
+.Services .Services-content .call2::before{
+    content:' ';
+    position: absolute ;
+    background-color: orange;
+    width:80px;
+    height: calc(100% + 50px);
+    top:-20px;
+    left: -20px;
+    z-index:-1 ;
+
+   
+}
+.Services .Services-content .call2::after{
+    content: " ";
+    position: absolute;
+    width: 50px;
+    height: 400px;
+    border-left: 100px solid  orange;;
+    border-bottom: 30px solid orange;;
+    z-index: -3;
+    right: -70px;
+    top: -20px;
+
+}
+
+ 
+
+.menu{
+    margin-top: 20px;
+    
+    
+}
+
+.col_4{
+    flex-basis: 25%;
+    min-width: 200px;  
+}
+
+.menu .m1{
+    background-color:black;
+    margin: 10px;
+    border: 1px solid red;
+    
+}
+
+
+
+
+.menu .row img{
+    width: 50%;
+    margin-left: 20%;
+    }
+    
+
+
+.menu .row h5{
+    font-size: 20px;
+    color: red;
+    text-align: center;
+}
+.menu .row p{
+    color: #ddd;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+   
+}
+.menu .row button{
+    margin-left:40% ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   
+    
+    background-color: white;
+    color: black;
+    border: 2px solid red;
+    border-radius: 30px;
+}
+/**********************************************************************/
+
+.About{
+    margin-top: 20px;
+   
+}
+.About .row{
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  
+   
+   
+}
+
+.col_2{
+    flex-basis: 50%;
+    min-width: 300px;
+    
+}
+.col_2_2{
+    flex-basis: 50%;
+    min-width: 350px;
+    position: relative;
+  
+   
+}
+.row .col_2_2 img{
+   width: 100%;
+   background-size: cover;  
+   
+   
+
+   
+}
+.About .row .col_2_2::before{
+    content:"" ;
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.771);
+    width: 80px;
+    height: calc(100% + 50px);
+    top:-20px;
+    left: -20px;
+    z-index:-1 ;
+    
+   
+}
+.About .row .col_2_2::after{
+    content: " ";
+    position: absolute;
+    width: 50px;
+    height: 200px;
+    border-left: 100px solid  rgba(255, 0, 0, 0.771);;
+    border-bottom: 30px solid rgba(255, 0, 0, 0.771);;
+    z-index: -3;
+    right: -70px;
+    top: -20px;
+
+}
+
+.info-p{
+    text-align: center;
+   padding: 4px;
+
+}
+/******************************************/
+    
+   
+    
+
+
+.end{
+    margin-top: 80px;
+    background-color: #f6f6f6;
+    background-color: red;
+}
+.foot {
+    align-content: center;
+    
+}
+.end h3{
+    color:black;
+   text-align: center;
+ 
+}
+.end a{
+    color: orange;
+    font-size:25px ; 
+    margin-left: 450px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+   
+
+} 
+.end i{
+    font-size: 50px;
+    margin-left: 530px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+ /**********************************/
+media only screen and (max-width: 600px) {
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header .links ul {
+        position: static;
+        width: 100%;
+    }
+    .landing .intro-text h1 {
+        font-size: 24px;
+    }
+    .landing .intro-text p {
+        font-size: 14px;
+    }
+    .menu .m1 img {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .menu .row button {
+        margin: 10px auto;
+        display: block;
+    }
+    .Services .Services-content {
+        flex-direction: column;
+    }
+    .Services .Services-content .cal1 .l1 {
+        flex-basis: 100%;
+    }
+        .About .row .col_2_2::before{
+        display: none;
+    }
+    .About .row .col_2_2::after{
+        display: none;
+    }
+  /* استهداف الأجهزة اللوحية (601px - 900px) */
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+   
+  
+    .landing .intro-text p{
+        font-size: 15px;
+     }
+     .info-p{
+        font-size: 14px;
+     }
+     .end h3{
+        font-size: 14px;
+     }
+    .end a{
+    
+        display: none;
+       
+    
+    } 
+    .end i{
+        font-size: 40px;
+        margin-left: 300px;
+        
+       
+    
+    }
+    .About .row .col_2_2::before{
+        display: none;
+    }
+    .About .row .col_2_2::after{
+        display: none;
+    }
+    .Services .Services-content .call2::before{
+        display: none;
+    
+    }
+    .Services .Services-content .call2::after{
+        display: none;
+    }
+    .Services .Services-content .call2 video{
+        width: 100%;
+        height: 100%;
+          
+        
+      }
+
+   
+   
+  
+    
+   
+    
   }
+  
+  /* استهداف أجهزة الكمبيوتر المكتبية (901px فأكثر) */
+  @media only screen and (min-width: 901px) { 
+  }
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
