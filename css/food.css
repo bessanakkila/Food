@@ -491,16 +491,16 @@ media only screen and (max-width: 600px) {
         flex-basis: 100%;
     }
     .Services .Services-content .call2{
-        display:none;
+        display: black;
         
         
     }
     .Services .Services-content .call2::before{
        
-        display:none;
+        display: black;
     }
     .Services .Services-content .call2::after{
-        display:none;
+        display: black;
     }
         .About .row .col_2::before{
         display: none;
