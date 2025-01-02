@@ -484,10 +484,10 @@ media only screen and (max-width: 600px) {
     .Services .Services-content .cal1 .l1 {
         flex-basis: 100%;
     }
-        .About .row .col_2_2::before{
+        .About .row .col_2::before{
         display: none;
     }
-    .About .row .col_2_2::after{
+    .About .row .col_2::after{
         display: none;
     }
   /* استهداف الأجهزة اللوحية (601px - 900px) */
