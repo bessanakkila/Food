@@ -485,7 +485,8 @@ media only screen and (max-width: 600px) {
         flex-basis: 100%;
     }
     .Services .Services-content .call2::before{
-       display: none; 
+       
+        background color :black;
     }
         .About .row .col_2::before{
         display: none;
