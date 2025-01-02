@@ -10,7 +10,7 @@
     padding-left: 25px;
     padding-right: 25px;  
 }
-@media(min-width:768px) and (max-width:991px){
+/*@media(min-width:768px) and (max-width:991px){
     .container{
         width: 750px;
        
@@ -31,7 +31,7 @@
         width:1170px;
     }
 
-}
+}*/
 .special-heading{
     color:#facab6 ;
     font-size: 100px;
