@@ -491,7 +491,7 @@ media only screen and (max-width: 600px) {
         display: none;
     }
   /* استهداف الأجهزة اللوحية (601px - 900px) */
-  @media only screen and (min-width: 601px) and (max-width: 900px) {
+  @media only screen and(max-width: 800px) {
    
   
     .landing .intro-text p{
